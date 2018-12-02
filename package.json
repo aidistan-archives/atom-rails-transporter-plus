@@ -1,0 +1,42 @@
+{
+  "name": "rails-transporter",
+  "main": "./lib/rails-transporter",
+  "version": "1.7.1",
+  "description": "Open related Rails files depending on current context",
+  "keywords": [
+    "rails",
+    "ruby on rails",
+    "ruby",
+    "rspec",
+    "minitest"
+  ],
+  "activationCommands": {
+    "atom-workspace": [
+      "rails-transporter:open-controller",
+      "rails-transporter:open-view-finder",
+      "rails-transporter:open-layout",
+      "rails-transporter:open-model",
+      "rails-transporter:open-helper",
+      "rails-transporter:open-test",
+      "rails-transporter:open-spec",
+      "rails-transporter:open-partial-template",
+      "rails-transporter:open-asset",
+      "rails-transporter:open-migration-finder",
+      "rails-transporter:open-view",
+      "rails-transporter:open-factory"
+    ]
+  },
+  "repository": "https://github.com/hmatsuda/rails-transporter",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.1.0",
+    "pluralize": "1.2.1",
+    "temp": "~0.6.0",
+    "wrench": "^1.5",
+    "underscore": "1.x",
+    "change-case": "2.1.6"
+  }
+}
