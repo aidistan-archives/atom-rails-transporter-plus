@@ -11,6 +11,7 @@ function root () {
 function path (...args) {
   return _path_.join.apply(this, _.flattenDeep([root(), args]))
 }
+path.sep = _path_.sep // for a little convenience
 
 // @return {Promise}
 function open (...args) {

@@ -8,11 +8,20 @@ describe('RailsPath', () => {
     atom.project.setPaths([root()])
   })
 
-  it('parses rails paths', () => {
-    let filePath = path('app', 'controllers', 'blogs_controller.rb')
-    let railsPath = RailsPath.parse(filePath)
+  it('parses controller path', () => {
+    const filePath = path('app', 'controllers', 'blogs_controller.rb')
+    const railsPath = RailsPath.parse(filePath)
 
     expect(railsPath.type).toBe('controller')
+    expect(railsPath.resource).toBe('blogs')
+  })
+
+  it('parses namespace controller path', () => {
+    const filePath = path('app', 'controllers', 'admin', 'blogs_controller.rb')
+    const railsPath = RailsPath.parse(filePath)
+
+    expect(railsPath.type).toBe('controller')
+    expect(railsPath.namespace).toBe(path.sep + 'admin')
     expect(railsPath.resource).toBe('blogs')
   })
 })

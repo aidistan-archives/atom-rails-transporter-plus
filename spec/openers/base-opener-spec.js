@@ -20,7 +20,7 @@ describe('BaseOpener', () => {
       waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
         'opening model from controller', CAN_NOT_WAIT)
       runs(() => {
-        let editor = atom.workspace.getActiveTextEditor()
+        const editor = atom.workspace.getActiveTextEditor()
         expect(editor.getPath()).toBe(path('app', 'models', 'blog.rb'))
       })
     })
@@ -33,7 +33,7 @@ describe('BaseOpener', () => {
       waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
         'opening model from namespaced controller', CAN_NOT_WAIT)
       runs(() => {
-        let editor = atom.workspace.getActiveTextEditor()
+        const editor = atom.workspace.getActiveTextEditor()
         expect(editor.getPath()).toBe(path('app', 'models', 'blog.rb'))
       })
     })
@@ -46,7 +46,7 @@ describe('BaseOpener', () => {
       waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
         'opening model from view', CAN_NOT_WAIT)
       runs(() => {
-        let editor = atom.workspace.getActiveTextEditor()
+        const editor = atom.workspace.getActiveTextEditor()
         expect(editor.getPath()).toBe(path('app', 'models', 'blog.rb'))
       })
     })
@@ -59,7 +59,7 @@ describe('BaseOpener', () => {
       waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
         'opening model from model test', CAN_NOT_WAIT)
       runs(() => {
-        let editor = atom.workspace.getActiveTextEditor()
+        const editor = atom.workspace.getActiveTextEditor()
         expect(editor.getPath()).toBe(path('app', 'models', 'blog.rb'))
       })
     })
@@ -72,7 +72,7 @@ describe('BaseOpener', () => {
       waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
         'opening model from model test', CAN_NOT_WAIT)
       runs(() => {
-        let editor = atom.workspace.getActiveTextEditor()
+        const editor = atom.workspace.getActiveTextEditor()
         expect(editor.getPath()).toBe(path('app', 'models', 'blog.rb'))
       })
     })
