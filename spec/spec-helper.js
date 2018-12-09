@@ -24,7 +24,7 @@ function dispatch (command) {
   atom.commands.dispatch(editorElement, command)
 }
 
-// Must open fast
-const CAN_NOT_WAIT = 10
+// Make sure it's fast but not too harsh to Windows
+const CAN_NOT_WAIT = 100
 
 export default { root, path, open, dispatch, CAN_NOT_WAIT }
