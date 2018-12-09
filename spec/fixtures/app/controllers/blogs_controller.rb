@@ -1,12 +1,13 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  layout "special"
+  layout 'special'
   include Blog::Taggable
 
   # GET /blogs
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    render layout: 'special'
   end
 
   # GET /blogs/1

@@ -20,7 +20,7 @@ describe('ViewOpener', () => {
     waitsForPromise(() =>
       open('app', 'controllers', 'blogs_controller.rb'))
     runs(() => {
-      atom.workspace.getActiveTextEditor().setCursorBufferPosition([7, 0])
+      atom.workspace.getActiveTextEditor().setCursorBufferPosition([9, 0])
       dispatch('rails-transporter-plus:open-view')
     })
     waitsFor(() => {
@@ -34,7 +34,37 @@ describe('ViewOpener', () => {
     })
   })
 
-  it('opens partial template from view', () => {
+  it('opens global layout from controller', () => {
+    waitsForPromise(() =>
+      open('app', 'controllers', 'blogs_controller.rb'))
+    runs(() => {
+      atom.workspace.getActiveTextEditor().setCursorBufferPosition([2, 0])
+      dispatch('rails-transporter-plus:open-view')
+    })
+    waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
+      'opening global layout from controller', CAN_NOT_WAIT)
+    runs(() => {
+      const editor = atom.workspace.getActiveTextEditor()
+      expect(editor.getPath()).toBe(path('app', 'views', 'layouts', 'special.html.erb'))
+    })
+  })
+
+  it('opens local layout from controller', () => {
+    waitsForPromise(() =>
+      open('app', 'controllers', 'blogs_controller.rb'))
+    runs(() => {
+      atom.workspace.getActiveTextEditor().setCursorBufferPosition([9, 11])
+      dispatch('rails-transporter-plus:open-view')
+    })
+    waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
+      'opening global layout from controller', CAN_NOT_WAIT)
+    runs(() => {
+      const editor = atom.workspace.getActiveTextEditor()
+      expect(editor.getPath()).toBe(path('app', 'views', 'layouts', 'special.html.erb'))
+    })
+  })
+
+  it('opens global partial from view', () => {
     waitsForPromise(() =>
       open('app', 'views', 'blogs', 'edit.html.erb'))
     runs(() => {
@@ -42,20 +72,22 @@ describe('ViewOpener', () => {
       dispatch('rails-transporter-plus:open-view')
     })
     waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
-      'opening partial template from view', CAN_NOT_WAIT)
+      'opening global partial from view', CAN_NOT_WAIT)
     runs(() => {
       const editor = atom.workspace.getActiveTextEditor()
       expect(editor.getPath()).toBe(path('app', 'views', 'shared', '_form.html.erb'))
     })
+  })
 
+  it('opens local partial from view', () => {
     waitsForPromise(() =>
       open('app', 'views', 'blogs', 'edit.html.erb'))
     runs(() => {
       atom.workspace.getActiveTextEditor().setCursorBufferPosition([6, 0])
       dispatch('rails-transporter-plus:open-view')
     })
-    waitsFor(() => atom.workspace.getActivePane().getItems().length === 3,
-      'opening partial template from view', CAN_NOT_WAIT)
+    waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
+      'opening local partial from view', CAN_NOT_WAIT)
     runs(() => {
       const editor = atom.workspace.getActiveTextEditor()
       expect(editor.getPath()).toBe(path('app', 'views', 'blogs', '_form02.html.erb'))
