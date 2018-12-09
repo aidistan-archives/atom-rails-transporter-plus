@@ -5,11 +5,8 @@ describe('ViewOpener', () => {
   let workspaceElement
 
   beforeEach(() => {
-    // Setup project path for RailsPath
     atom.project.setPaths([root()])
-    // To make sure the view of the workspace exists
     workspaceElement = atom.views.getView(atom.workspace)
-
     waitsForPromise(() => atom.packages.activatePackage('rails-transporter-plus'))
   })
 
@@ -23,7 +20,7 @@ describe('ViewOpener', () => {
     waitsForPromise(() =>
       open('app', 'controllers', 'blogs_controller.rb'))
     runs(() => {
-      atom.workspace.getActiveTextEditor().setCursorBufferPosition([7, 1])
+      atom.workspace.getActiveTextEditor().setCursorBufferPosition([7, 0])
       dispatch('rails-transporter-plus:open-view')
     })
     waitsFor(() => {
@@ -41,7 +38,7 @@ describe('ViewOpener', () => {
     waitsForPromise(() =>
       open('app', 'views', 'blogs', 'edit.html.erb'))
     runs(() => {
-      atom.workspace.getActiveTextEditor().setCursorBufferPosition([5, 1])
+      atom.workspace.getActiveTextEditor().setCursorBufferPosition([5, 0])
       dispatch('rails-transporter-plus:open-view')
     })
     waitsFor(() => atom.workspace.getActivePane().getItems().length === 2,
@@ -54,7 +51,7 @@ describe('ViewOpener', () => {
     waitsForPromise(() =>
       open('app', 'views', 'blogs', 'edit.html.erb'))
     runs(() => {
-      atom.workspace.getActiveTextEditor().setCursorBufferPosition([6, 1])
+      atom.workspace.getActiveTextEditor().setCursorBufferPosition([6, 0])
       dispatch('rails-transporter-plus:open-view')
     })
     waitsFor(() => atom.workspace.getActivePane().getItems().length === 3,
