@@ -1,6 +1,7 @@
 # Atom Package: Rails Transporter Plus
 
-[![Build Status](https://travis-ci.org/aidistan/atom-rails-transporter-plus.svg?branch=master)](https://travis-ci.org/aidistan/atom-rails-transporter-plus)
+[![Build Status](https://travis-ci.org/aidistan/atom-rails-transporter-plus.svg)](https://travis-ci.org/aidistan/atom-rails-transporter-plus)
+[![Build status](https://ci.appveyor.com/api/projects/status/d93c28ojr5v7mj0u?svg=true)](https://ci.appveyor.com/project/aidistan/atom-rails-transporter-plus)
 
 A rewritten version of [hmatsuda/rails-transporter](https://github.com/hmatsuda/rails-transporter)
 
