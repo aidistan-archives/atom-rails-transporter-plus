@@ -15,11 +15,22 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
+  "package-deps": [
+    "file-icons"
+  ],
+  "consumedServices": {
+    "file-icons.element-icons": {
+      "versions": {
+        "1.0.0": "consumeElementIcons"
+      }
+    }
+  },
   "scripts": {
     "docs": "jsdoc -r lib",
     "lint": "eslint ."
   },
   "dependencies": {
+    "atom-package-deps": "^4.6.2",
     "atom-select-list": "^0.7.2",
     "lodash": "^4.17.11",
     "lodash.product": "^18.9.19",
