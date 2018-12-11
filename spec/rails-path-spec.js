@@ -14,6 +14,7 @@ describe('RailsPath', () => {
 
     expect(railsPath.type).toBe('controller')
     expect(railsPath.resource).toBe('blogs')
+    expect(railsPath.$).toEqual(railsPath._)
   })
 
   it('parses namespace controller path', () => {
@@ -23,5 +24,6 @@ describe('RailsPath', () => {
     expect(railsPath.type).toBe('controller')
     expect(railsPath.namespace).toBe(path.sep + 'admin')
     expect(railsPath.resource).toBe('blogs')
+    expect(railsPath.$).toEqual(railsPath._)
   })
 })
