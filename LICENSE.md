@@ -1,4 +1,4 @@
-> [aidistan/rails-transporter-plus](https://github.com/aidistan/rails-transporter-plus)
+## [aidistan/rails-transporter-plus](https://github.com/aidistan/rails-transporter-plus)
 
 Copyright (c) 2018 Aidi Stan
 
@@ -23,7 +23,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
 
-> [hmatsuda/rails-transporter](https://github.com/hmatsuda/rails-transporter)
+## [hmatsuda/rails-transporter](https://github.com/hmatsuda/rails-transporter)
 
 Copyright (c) 2014 Haruhiko Kobayashi
 

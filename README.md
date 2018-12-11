@@ -11,7 +11,22 @@ A rewritten version of [hmatsuda/rails-transporter](https://github.com/hmatsuda/
 - Respect conventions
 - Simple to use/contribute
 
-## What's next?
+## Additional features
 
-- Be open to more openers
-- Add a few more tests
+- Customizable keymaps
+  - Openers could be enabled/disabled by keymap setting
+- Support new openers including:
+  - [Pundit Policies](https://github.com/varvet/pundit#policies)
+  - ... (to be added and any issue or PR is welcomed)
+
+## Installation
+
+Install this package in Atom or using `apm install`
+
+## Usage
+
+Basically the same as [hmatsuda/rails-transporter](https://github.com/hmatsuda/rails-transporter)
+
+## License
+
+[The MIT License](https://github.com/aidistan/atom-rails-transporter-plus/blob/master/LICENSE.md)
