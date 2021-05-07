@@ -29,7 +29,7 @@
   "dependencies": {
     "atom-package-deps": "^4.6.2",
     "atom-select-list": "^0.7.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.product": "^18.9.19",
     "pluralize": "^7.0.0"
   },
